@@ -1,0 +1,30 @@
+.wrapper {
+    margin: 0 auto;
+    height: 90vh;
+    width: 90vw;
+}
+
+.message {
+    color: #ffffff; /* Replace with your desired text color code */
+}
+
+.header {
+    background: linear-gradient(to right, #ec2323, #ffa07a);
+    color: transparent; /* Make the original text color transparent */
+    text-transform: uppercase; /* Convert text to uppercase */
+    background-clip: text; /* Apply the gradient to the text only */
+    /* Add other styles as needed */
+}
+
+.header::before {
+    content: ""; /* Create an empty pseudo-element */
+    position: absolute; /* Set position to absolute */
+    top: 0; /* Position from the top */
+    right: 0; /* Position from the left */
+    width: 66px; /* Set the width of the image to 100% of the container */
+    height: 100px; /* Set the height of the image to 100% of the container */
+    background-image: url('/public/icon-inteltion.svg'); /* Set the path to your image */
+    background-size: cover; /* Scale the image to cover the container */
+    background-position: center; /* Center the image within the container */
+}
+/* <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132.7 198"><rect x="66.35" width="66.35" height="66.35" style="fill:#de1f26"/><rect y="66.35" width="66.35" height="131.65" style="fill:#de1f26"/></svg> */
