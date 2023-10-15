@@ -8,6 +8,19 @@
     color: #ffffff; /* Replace with your desired text color code */
 }
 
+
+.message::before {
+    content: ""; /* Create an empty pseudo-element */
+    position: absolute; /* Set position to absolute */
+    top: 0; /* Position from the top */
+    right: 0; /* Position from the left */
+    width: 66px; /* Set the width of the image to 100% of the container */
+    height: 100px; /* Set the height of the image to 100% of the container */
+    background-image: url('/public/icon-inteltion.svg'); /* Set the path to your image */
+    background-size: cover; /* Scale the image to cover the container */
+    background-position: center; /* Center the image within the container */
+}
+
 .header {
     background: linear-gradient(to right, #ec2323, #ffa07a);
     color: transparent; /* Make the original text color transparent */
@@ -27,4 +40,86 @@
     background-size: cover; /* Scale the image to cover the container */
     background-position: center; /* Center the image within the container */
 }
-/* <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132.7 198"><rect x="66.35" width="66.35" height="66.35" style="fill:#de1f26"/><rect y="66.35" width="66.35" height="131.65" style="fill:#de1f26"/></svg> */
+
+main{
+    margin-top: 10%;
+  }
+main::before {
+    content: ""; /* Create an empty pseudo-element */
+    position: absolute; /* Set position to absolute */
+    top: 200px; /* Position from the top */
+  
+    left: 600px; /* Set the left position to 80 pixels */
+    width: 66px; /* Set the width of the image to 100% of the container */
+    height: 100px; /* Set the height of the image to 100% of the container */
+    background-image: url('/public/icon-inteltion.svg'); /* Set the path to your image */
+    background-size: cover; /* Scale the image to cover the container */
+    background-position: center; /* Center the image within the container */
+}
+  
+  #homePage {
+    text-align: center;
+    background-color: rgba(68, 68, 85, 0.707);
+    border-radius: 10px;
+    width: 35%;
+    margin:auto;
+    box-shadow: 0 0 10px rgba(132, 132, 164, 0.707);
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 1%;
+    padding-bottom: 5%;
+  }
+  
+  h1.login-header {
+    color: white;
+    font-size: 60px; /* Increased size for prominence */
+    font-weight: bold; /* Made it bold */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Added a subtle shadow */
+    text-transform: uppercase; /* Made the text uppercase for presence */
+    letter-spacing: 2px; /* Added spacing between letters for an airy feel */
+    background: linear-gradient(45deg, #ff105f, #ffad06); /* Added gradient */
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 10%;
+  }
+  
+  label.username-header {
+    font-size: 20px;
+    color: #f4f2ef;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10%;
+    text-align: left;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  input.input-box {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-left: 2%;
+  }
+  
+  button {
+    background-color: #026bdc;
+    color: #f4f2ef;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  button:hover {
+    background-color: #33BBC5;
+  }

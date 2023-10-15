@@ -8,11 +8,13 @@ import React, { useState, useMemo, useEffect } from 'react';
 import './App.css';
 
 const App = () => { 
-  const displayName = 'Guest'
+  const [displayName, setDisplayName] = useState('Guest');
   const [userId, setUserId] = useState<string>('');
   const [token, setToken] = useState<string>('');
   const [teamsMeetingLink, setTeamsMeetingLink] = useState<string>('');
-  const [message, setMessage] = useState<string>('Welcome to Inteltion Call service');
+  const [message, setMessage] = useState<string>('');
+  const [loggedIn, setLoggedIn] = useState(false);
+
   const credential = useMemo(() => {
     if (token) {
       return new AzureCommunicationTokenCredential(token)
@@ -22,6 +24,7 @@ const App = () => {
 
   const callAdapterArgs = useMemo(() => {
     if (userId && credential && displayName && teamsMeetingLink) {
+      
       return {
         userId: fromFlatCommunicationIdentifier(userId) as CommunicationUserIdentifier,
         displayName,
@@ -31,10 +34,11 @@ const App = () => {
     }
     return {};
   }, [userId, credential, displayName, teamsMeetingLink]);
-
+  
   const callAdapter = useAzureCommunicationCallAdapter(callAdapterArgs);
-
+  
   useEffect(() => {
+    if (loggedIn) {
     const init = async () => {
       setMessage('Getting ACS user');
       //Call Azure Function to get the ACS user identity and token
@@ -48,17 +52,23 @@ const App = () => {
       const resTeams = await fetch(process.env.REACT_APP_TEAMS_MEETING_FUNCTION as string);
       const link = await resTeams.text();
       setTeamsMeetingLink(link);
-      setMessage('');
       console.log('Teams meeting link', link);
     }
-    init();
-  }, []);
+    init();}
+  }, [loggedIn]);
 
-  if (callAdapter) {
+
+  const handleLogin = () => {
+    setLoggedIn(true);
+  };
+
+  
+  if (callAdapter&&loggedIn) {
     return (
       <div className="header">
         <h1>Inteltion Contact Customer Service</h1>
         <div className="wrapper">
+    
           <CallComposite
             adapter={callAdapter}
           />
@@ -66,13 +76,37 @@ const App = () => {
       </div>
     );
   }
-  if (!credential) {
-    return <>Failed to construct credential. Provided token is malformed.</>;
-  }
+  // if (!credential) {
+  //   return <>Failed to construct credential. Provided token is malformed.</>;
+  // }
   if (message) {
     return <div className="message">{message}</div>;
   }
-  return <div className="message">Initializing...</div>;
-};
+
+    return (
+      <main>
+      <div id="homePage">
+        <h1 className='login-header'>Login</h1>
+      
+        <div className='container'>
+          <label className='username-header'>
+            Username:
+            <input 
+              className='input-box' 
+              id="username"
+              type="text"
+              value={displayName}
+              onChange={(e) => setDisplayName(e.target.value)}
+            />
+            </label>
+        
+          <button onClick={handleLogin} className='login-button'>Sign in</button>
+          </div>
+      </div>
+      </main>
+    
+  
+  
+)};
 
 export default App;
