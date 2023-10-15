@@ -1,0 +1,19 @@
+{
+    "IsEncrypted": false,
+    "Values": {
+        "FUNCTIONS_WORKER_RUNTIME": "node",
+        "TENANT_ID": "a5c20665-f3d8-4f07-b211-5051a9b92f26",
+        "CLIENT_ID": "7035e4a3-ecfa-479f-adb6-51632547a3e6",
+        "CLIENT_SECRET": "JgZ8Q~EEzc80FFoQeC8EmvqOtDEqwSYiBFqH2arh",
+        "USER_ID": "00e5a27e-aa10-4705-9a6d-200ad0cbc28d",
+        "ACS_CONNECTION_STRING": "endpoint=https://inteltion-commu.unitedstates.communication.azure.com/;accesskey=yvXqDm9ZKqlLkC2iz0JhwBVf95uFoLRv7mjZoaTAR84gde3DZfen+gcZjrNOWMORpEzy0OmwR30VOcsDMzf1yA=="
+    },
+    "Host": {
+        "LocalHttpPort": 7071,
+        "CORS": "*",
+        "CORSCredentials": false
+    },
+    "watchDirectories": [
+        "Shared"
+    ]
+}
