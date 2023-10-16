@@ -9,17 +9,6 @@
 }
 
 
-.message::before {
-    content: ""; /* Create an empty pseudo-element */
-    position: absolute; /* Set position to absolute */
-    top: 0; /* Position from the top */
-    right: 0; /* Position from the left */
-    width: 66px; /* Set the width of the image to 100% of the container */
-    height: 100px; /* Set the height of the image to 100% of the container */
-    background-image: url('/public/icon-inteltion.svg'); /* Set the path to your image */
-    background-size: cover; /* Scale the image to cover the container */
-    background-position: center; /* Center the image within the container */
-}
 
 .header {
     background: linear-gradient(to right, #ec2323, #ffa07a);
@@ -29,35 +18,30 @@
     /* Add other styles as needed */
 }
 
-.header::before {
-    content: ""; /* Create an empty pseudo-element */
-    position: absolute; /* Set position to absolute */
-    top: 0; /* Position from the top */
-    right: 0; /* Position from the left */
-    width: 66px; /* Set the width of the image to 100% of the container */
-    height: 100px; /* Set the height of the image to 100% of the container */
-    background-image: url('/public/icon-inteltion.svg'); /* Set the path to your image */
-    background-size: cover; /* Scale the image to cover the container */
-    background-position: center; /* Center the image within the container */
-}
 
-main{
+.main{
     margin-top: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px; /* Add padding for spacing */
   }
-main::before {
-    content: ""; /* Create an empty pseudo-element */
-    position: absolute; /* Set position to absolute */
-    top: 200px; /* Position from the top */
-  
-    left: 600px; /* Set the left position to 80 pixels */
-    width: 66px; /* Set the width of the image to 100% of the container */
-    height: 100px; /* Set the height of the image to 100% of the container */
-    background-image: url('/public/icon-inteltion.svg'); /* Set the path to your image */
-    background-size: cover; /* Scale the image to cover the container */
-    background-position: center; /* Center the image within the container */
-}
+
   
   #homePage {
+    text-align: center;
+    background-color: rgba(68, 68, 85, 0.707);
+    border-radius: 10px;
+    width: 35%;
+    margin:auto;
+    box-shadow: 0 0 10px rgba(132, 132, 164, 0.707);
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 1%;
+    padding-bottom: 5%;
+  }
+
+  #homePage-after {
     text-align: center;
     background-color: rgba(68, 68, 85, 0.707);
     border-radius: 10px;
@@ -95,6 +79,18 @@ main::before {
     font-weight: bold;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   }
+
+  label.email {
+    font-size: 20px;
+    color: #f4f2ef;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10%;
+    text-align: left;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  }
   
   input.input-box {
     width: 70%;
@@ -122,4 +118,16 @@ main::before {
   
   button:hover {
     background-color: #33BBC5;
+  }
+
+  .logo{
+    height: 5%;
+    /* padding-left: 0; */
+    padding-top: 2px;
+    max-width: 10%;
+    object-position: left top;
+  }
+  .logo-container {
+    display: flex;
+    padding-bottom: 100px;
   }
