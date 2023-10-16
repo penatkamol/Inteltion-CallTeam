@@ -25,8 +25,8 @@ async function ensureGraphForAppOnlyAuth() {
     appGraphClient = Client.initWithMiddleware({
       authProvider: authProvider
     });
-    // console.log('Yo',clientSecretCredential);
-    // console.log('\nYa',appGraphClient);
+    console.log('Yo',clientSecretCredential);
+    console.log('\nYa',appGraphClient);
   }
 }
 
@@ -59,9 +59,33 @@ async function getuser(){
   
   ensureGraphForAppOnlyAuth();
   
-  const newEvent = await appGraphClient.api('/users/kitti@inteltion.com').get();
-  console.log(newEvent.id);
+  // const newEvent = await appGraphClient.api('/users/xprotentials@inteltion.com').get();
+  // console.log(newEvent);
 }
 
 getuser();
+// async function invite(){
+//   ensureGraphForAppOnlyAuth();
+// const inviteParticipantsOperation = {
+  
+//   participants: [
+//     {
+//       '@odata.type': '#microsoft.graph.invitationParticipantInfo',
+//       replacesCallId: 'a7ebfb2d-871e-419c-87af-27290b22e8db',
+//       identity: {
+//         '@odata.type': '#microsoft.graph.identitySet',
+//         user: {
+//           '@odata.type': '#microsoft.graph.identity',
+//           id: '00e5a27e-aa10-4705-9a6d-200ad0cbc28d',
+//           displayName: 'string'
+//         }
+//       }
+//     }
+//   ],
+//   clientContext: 'f2fa86af-3c51-4bc2-8fc0-475452d9764f'
+// };
 
+// const newEvent = await appGraphClient.api('/communications/calls/{id}/participants/invite').post(inviteParticipantsOperation);
+// console.log(newEvent);
+// };
+// invite();
